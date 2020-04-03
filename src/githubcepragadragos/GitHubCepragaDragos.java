@@ -18,7 +18,7 @@ public class GitHubCepragaDragos {
         // TODO code application logic here
         
         System.out.println("Hello, World!");
-        String world = "Hello World!";
+        String world = "Hello, World!";
         System.out.format("%s", world);
         System.out.println();
         
@@ -30,24 +30,25 @@ public class GitHubCepragaDragos {
         
         int n = (int)(Math.random()*1000000);
         System.out.println(n);
-        System.out.println(n % 100000);
-        System.out.println(sumOfDigits(n % 100000));
-        System.out.println(sumOfDigits(sumOfDigits(n % 100000)));
-        System.out.println("This summer I will learn " + languages[sumOfDigits(sumOfDigits(n % 100000))] + ".");
         
         int i = n*3;
         System.out.println(i);
-        System.out.println(i % 100000);
-        System.out.println(sumOfDigits(i % 100000));
-        System.out.println(sumOfDigits(sumOfDigits(i % 100000)));
-        System.out.println("This summer I will learn " + languages[sumOfDigits(sumOfDigits(i % 100000))] + ".");
         
-        int e = n/7;
-        System.out.println(e);
-        System.out.println(e % 100000);
-        System.out.println(sumOfDigits(e % 100000));
-        System.out.println(sumOfDigits(sumOfDigits(e % 100000)));
-        System.out.println("This summer I will learn " + languages[sumOfDigits(sumOfDigits(e % 100000))] + ".");
+        int s = i/7;
+        System.out.println(s);
+        
+        int y = s % 100000;
+        System.out.println(y);
+        System.out.println(sumOfDigits(y));
+        System.out.println(sumOfDigits(sumOfDigits(y % 100000)));
+        try {
+            System.out.println("This summer I will learn " + languages[sumOfDigits(sumOfDigits(y % 100000))] + ".");
+        } catch(ArrayIndexOutOfBoundsException e) {
+            System.err.println("Ooops... the requested index is currently empty!");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
+        }
+        
     }
     
     public static int sumOfDigits(int x) {
