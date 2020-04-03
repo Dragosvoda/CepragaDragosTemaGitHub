@@ -44,9 +44,8 @@ public class GitHubCepragaDragos {
         System.out.println(result);
         
         while(result > 9) {
-          System.out.println(result);
           result = sumOfDigits(result);
-          System.out.println(result);
+          System.out.println("New result: " + result);
         }
         
         System.out.println("Willy-nilly, this summer I will learn " + languages[result] + ".");
