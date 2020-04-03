@@ -39,15 +39,17 @@ public class GitHubCepragaDragos {
         
         int y = s % 100000;
         System.out.println(y);
-        System.out.println(sumOfDigits(y));
-        System.out.println(sumOfDigits(sumOfDigits(y % 100000)));
-        try {
-            System.out.println("This summer I will learn " + languages[sumOfDigits(sumOfDigits(y % 100000))] + ".");
-        } catch(ArrayIndexOutOfBoundsException e) {
-            System.err.println("Ooops... the requested index is currently empty!");
-            System.out.println(e.getMessage());
-            e.printStackTrace();
-        }
+        
+        int result = sumOfDigits(y);
+        System.out.println(result);
+        
+        int further = sumOfDigits(result);
+        System.out.println(further);
+        
+        int evenFurther = sumOfDigits(further);
+        System.out.println(evenFurther);
+        
+        System.out.println("This summer I will learn " + languages[evenFurther] + ".");
         
     }
     
