@@ -28,29 +28,28 @@ public class GitHubCepragaDragos {
         }
         System.out.println();
         
-        int n = (int)(Math.random()*1000000);
+        int n = (int)(Math.random()*1_000_000);
         System.out.println(n);
         
         int i = n*3;
-        System.out.println(i);
+        System.out.println("Multiplied by 3: " + i);
         
         int s = i/7;
-        System.out.println(s);
+        System.out.println("Divided by 7: " + s);
         
-        int y = s % 100000;
-        System.out.println(y);
+        int y = s % 100_000;
+        System.out.println("Last 5 digits: " + y);
         
         int result = sumOfDigits(y);
         System.out.println(result);
         
-        int further = sumOfDigits(result);
-        System.out.println(further);
+        while(result > 9) {
+          System.out.println(result);
+          result = sumOfDigits(result);
+          System.out.println(result);
+        }
         
-        int evenFurther = sumOfDigits(further);
-        System.out.println(evenFurther);
-        
-        System.out.println("This summer I will learn " + languages[evenFurther] + ".");
-        
+        System.out.println("Willy-nilly, this summer I will learn " + languages[result] + ".");
     }
     
     public static int sumOfDigits(int x) {
